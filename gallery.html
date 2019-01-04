@@ -43,7 +43,6 @@
 
     <!-- Custom styles for this template -->
     <link href="css/clean-blog.min.css" rel="stylesheet">
-
   </head>
 
   <body>
@@ -76,29 +75,42 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/about-bg.jpg')">
+    <header class="masthead" style="background-image: url('img/gallery-bg.png')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="page-heading">
-              <h1>Contact</h1>
+            <div class="post-heading">
+              <h1>Angular image gallery</h1>
+              <h2 class="subheading">Responsive, fast and easy to use</h2>
+              <span class="meta">Posted by Benjamin Brandmeier
+                <a href="#about">oidamo.de</a>
+                on January 04, 2019</span>
             </div>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- Main Content -->
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <p>Benjamin Brandmeier <br />
-          <a href='mailto:bdvlop@gmail.com'>mailto:bdvlop@gmail.com</a></br></p><br>
-           </div>
-                   </div>
+    <!-- Post Content -->
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <p>This is a project I have started some time ago and I'm still maintaining it. The project consists of a responsive gallery, an image viewer and a script for image pre-processing.</p>
+
+            <h2 class="section-heading">How to use</h2>
+
+            <p>Before using the gallery, you have to process all of your images that will be part of your gallery with the convert script. The processed images will be stored to your applications assets or, if you wish, at a remote location. During runtime everything runs client-side and there is no separate server-side communication involved. The viewer takes care an optimal image quality is served based on the screen resolution.</p>
+
+            <p>The latest step to step guide can be found at this <a href="https://github.com/BenjaminBrandmeier/angular2-image-gallery/blob/master/README.md">Step-by-step tutorial.</a> </p>
+
+            <h2 class="section-heading">How it's built</h2>
+
+            <p>still to be written ... stay tuned</p>
+        </div>
       </div>
-    </div>
+    </article>
 
     <hr>
 
