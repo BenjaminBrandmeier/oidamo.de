@@ -150,7 +150,7 @@ gulp.task('dist', gulp.series(gulp.parallel('vendor', 'css', 'js', 'html', 'imag
     fs.mkdirSync(uploadDir);
   }
 
-  return gulp.src('build/**/*')
+  return gulp.src(['build/**/*', '!./build/assets', '!./build/assets/**'])
         .pipe(zip('oidamo_'+now+'.zip'))
         .pipe(gulp.dest('upload'))
 }));
