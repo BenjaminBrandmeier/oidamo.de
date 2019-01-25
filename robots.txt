@@ -1,0 +1,9 @@
+User Agent:*
+Disallow:/
+Allow: /about.html
+Allow: /backup.html
+Allow: /contact.html
+Allow: /gallery.html
+Allow: /gallery-demo.html
+Allow: /index.html
+Allow: /privacy.html

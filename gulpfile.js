@@ -101,6 +101,17 @@ function html() {
     .pipe(browsersync.stream());
 }
 
+// misc task
+function misc() {
+    return gulp
+        .src([
+            './robots.txt',
+            './sitemap.xml'
+        ])
+        .pipe(gulp.dest('./build/'))
+        .pipe(browsersync.stream());
+}
+
 // images task
 function images() {
   return gulp
@@ -114,6 +125,7 @@ function images() {
 }
 
 // Tasks
+gulp.task("misc", misc);
 gulp.task("css", css);
 gulp.task("js", js);
 gulp.task("html", html);
@@ -126,9 +138,9 @@ function browserSyncReload(done) {
   done();
 }
 
-gulp.task("default", gulp.parallel('vendor', css, js, html, images));
+gulp.task("default", gulp.parallel('vendor', css, js, html, images, misc));
 
-gulp.task('dev', gulp.series(gulp.parallel('vendor', 'css', 'js', 'html', 'images'), function() {
+gulp.task('dev', gulp.series(gulp.parallel('vendor', 'css', 'js', 'html', 'images', 'misc'), function() {
     browsersync.init({
       server: {
         baseDir: "./build"
@@ -140,7 +152,7 @@ gulp.task('dev', gulp.series(gulp.parallel('vendor', 'css', 'js', 'html', 'image
     gulp.watch(["./**/*.html", "!./build/**"], html);
 }));
 
-gulp.task('dist', gulp.series(gulp.parallel('vendor', 'css', 'js', 'html', 'images'), function() {
+gulp.task('dist', gulp.series(gulp.parallel('vendor', 'css', 'js', 'html', 'images', 'misc'), function() {
 
   var now = moment().format('YYYY-MM-DD');
   console.log(now)
